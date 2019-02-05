@@ -12,13 +12,16 @@ export default class Landing extends Component {
   }
 
   componentDidMount() {
-    fetch('https://swapi.co/api/films/1/')
+    fetch('https://swapi.co/api/films/')
       .then((response) => response.json())
-      .then(({ opening_crawl }) =>
+      .then(({ results, count }) => {
+        const randIndex = Math.round(Math.random() * (count - 1));
+        const { opening_crawl } = results[randIndex];
+        
         this.setState({
           openingCrawl: opening_crawl
         })
-      )
+      })
   }
 
   render() {
