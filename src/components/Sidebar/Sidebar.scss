@@ -6,24 +6,54 @@
 
   height: 100vh;
   position: sticky;
+  left: 0;
+  top: 0;
 
-  button {
+  z-index: 200;
+
+  .button-container {
     display: flex;
     justify-content: flex-end;
+    padding: 20px 60px;
 
-    width: 100%;
-    border: none;
-    background: none;
-    padding: 20px 80px;
+    font-size: 32px;
+    color: #fff;
 
-    font-size: 18px;
-    color: #ccc;
+    cursor: pointer;
 
-    transition: .3s;
+    button {
+      width: 100%;
+      border: none;
+      background: none;
 
-    &:hover {
+      padding: 0;
+
+      font-size: 32px;
+      color: rgb(145, 145, 145);  
+
+      transition: .6s;
       cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: .3s;
+      }
+
+      &.selected {
+        transform: scale(1.1);
+        color: #fff;
+      }
+    }
+
+    .dot {
       transform: scale(1.1);
+      white-space: pre;
+      transition: 1s;
+    }
+
+    .hidden {
+      opacity: 0;
+      transition: 1s;
     }
   }
 }
