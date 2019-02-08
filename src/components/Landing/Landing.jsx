@@ -24,10 +24,10 @@ export default class Landing extends Component {
         {
           loading
             ? (
-              <Fragment>
+              <div className='loading-wrapper'>
                 <div className={randomIcon} />
-                <p className="loading-text">Loading...</p>
-              </Fragment>
+                <p className="loading-text">Loading</p>
+              </div>
             )
             : (
               <Fragment>
