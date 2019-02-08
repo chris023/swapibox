@@ -23,7 +23,9 @@ export default class Sidebar extends Component {
     return (
       <div className='Sidebar'>
         { menuOptions.map((option) => (
-            <button onClick={this.handleClick}>{option}</button>
+          <button onClick={this.handleClick} key={option}>
+            { option }
+          </button>
         ))}
         <p className='text'></p>
       </div>

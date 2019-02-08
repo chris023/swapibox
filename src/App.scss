@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
 .App {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -5,4 +7,11 @@
   background: url('./assets/stars.jpg');
   
   min-height: 100vh;
+}
+
+.grid-content {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+  grid-gap: 20px;
+  padding: 20px;
 }

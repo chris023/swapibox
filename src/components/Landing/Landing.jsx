@@ -4,51 +4,39 @@ import './Landing.scss';
 
 export default class Landing extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      openingCrawl: '',
-      title: '',
-      releaseYear: '',
-      loading: true,
-    }
-  }
-
-  componentDidMount() {
-    fetch('https://swapi.co/api/films/')
-      .then((response) => response.json())
-      .then(({ results, count }) => {
-        const randIndex = Math.round(Math.random() * (count - 1));
-        const { opening_crawl, title, release_date } = results[randIndex];
-        
-        this.setState({
-          openingCrawl: opening_crawl,
-          title,
-          releaseYear: release_date.split('-')[0],
-          loading: false,
-        })
-      })
-  }
-
   render() {
+    const { loading, data } = this.props;
+    const { films } = data;
+
+    const loadingIcons = ['vader', 'wookie', 'r2d2', 'c3po', 'bb8', 'fighter', 'fett', 'trooper', 'wren'];
+    const randomIcon = loadingIcons[Math.round(Math.random() * (loadingIcons.length - 1))]
+
+    //Get random film
+    const randIndex = Math.round(Math.random() * (films.length - 1));
     const {
-      openingCrawl,
+      opening_crawl,
       title,
-      releaseYear,
-      loading,
-    } = this.state;
+      release_date,
+    } = films[randIndex];
 
     return (
       <div className='Landing'>
         {
           loading
-            ? ( <p>Loading...</p> )
+            ? (
+              <Fragment>
+                <div className={randomIcon} />
+                <p className="loading-text">Loading...</p>
+              </Fragment>
+            )
             : (
               <Fragment>
-                <p className='opening-crawl'>{openingCrawl}</p>
-                <div className='movie-info'>
-                  <p>{title}</p>
-                  <p>({releaseYear})</p>
+                <div className='opening-crawl'>
+                  <div class="title">
+                    <h2>{title + ' (' + release_date.split('-')[0] + ')'}</h2>
+                    <p>Episode {randIndex + 1}</p>
+                  </div>
+                  <p>{opening_crawl}</p>
                 </div>
               </Fragment>
             ) 

@@ -1,0 +1,158 @@
+$people-primary: #375877;
+$people-secondary: rgba($people-primary,0.5);
+$planet-primary: rgb(91, 64, 43);
+$planet-secondary: rgba($planet-primary,0.5);
+$vehicle-primary: #60366f;
+$vehicle-secondary: rgba($vehicle-primary,0.5);
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 250px;
+    height: 375px;
+
+    border: solid 1px #fff;
+    border-radius: 4px;
+
+    color: #fff;
+
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background: #000;
+
+    font-family: 'Special Elite', cursive;
+    p { transform: translateY(12.5%); } //Font baseline fix
+
+    .header {
+      border: solid 2px;
+      border-radius: 80px;
+
+      &.people {
+        border-color: $people-primary;
+        background: $people-secondary;
+      }
+
+      &.planet {
+        border-color: $planet-primary;
+        background: $planet-secondary;
+      }
+
+      &.vehicle {
+        border-color: $vehicle-primary;
+        background: $vehicle-secondary;
+      }
+      
+      
+      padding: 4px 15px;
+      height: 16.5px;
+
+      white-space: nowrap;
+
+      p, div {
+        display: inline-block;
+        margin: 0;
+      }
+
+      .fav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        border-top: solid 1px rgba(255, 255, 255, 0.5);
+        border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+
+        background: #000;
+
+        position: relative;
+        left: 200px;
+        top: 24px;
+
+        cursor: pointer;
+
+        &:hover,
+        .is-fav {
+          border-color: rgba(255,255,255, 1);
+        }
+
+        .circle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          position: relative;
+          right: 15px;
+
+          background: #000;
+
+          height: 30px;
+          width: 30px;
+          margin: -1px;
+          overflow: hidden;
+
+          border: solid 1px #fff8;
+          border-radius: 100%;
+
+          &:hover,
+          .is-fav {
+            border-color: inherit;
+          }
+
+          .img {
+            &:hover,
+            .is-fav {
+              border-color: inherit;
+              opacity: 1;
+            }
+
+            height: 100%;
+            width: 100%;
+            background: url('../../assets/star.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: invert(1);
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    .card-img {
+      height: 100%;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      border: solid 2px;
+      border-radius: 8px;
+
+      padding: 4px 20px;
+
+      font-size: 12px;
+
+      &.people {
+        border-color: $people-primary;
+        background: $people-secondary;
+      }
+
+      &.planet {
+        border-color: $planet-primary;
+        background: $planet-secondary;
+      }
+
+      &.vehicle {
+        border-color: $vehicle-primary;
+        background: $vehicle-secondary;
+      }
+
+      p {
+        margin: 4px 0;
+      }
+    }
+  }
