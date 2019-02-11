@@ -26,7 +26,7 @@ class People extends Component {
   }
 
   render() {
-    const { loading, getAttrForChar, toggleFavorite } = this.props;
+    const { loading, toggleFavorite } = this.props;
     const { people } = this.props.data;
 
     return (

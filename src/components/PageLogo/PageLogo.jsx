@@ -5,7 +5,7 @@ import './PageLogo.scss';
 class PageLogo extends Component {
   render() {
     return(
-      <a class="PageLogo" href='https://github.com/chris023/swapibox' target="_blank">
+      <a className="PageLogo" href='https://github.com/chris023/swapibox' target="_blank" rel="noopener noreferrer" >
         <h2>SWAPI</h2>
         <br />
         <p>-- Box --</p>

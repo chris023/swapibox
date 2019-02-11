@@ -36,7 +36,7 @@ export default class Sidebar extends Component {
           ?
           <div className="modal">
             <p>Created by Chris Meyer (2019)</p>
-            <a href='https://github.com/chris023/swapibox' target='_blank'> Github</a>
+            <a href='https://github.com/chris023/swapibox' target='_blank' rel="noopener noreferrer"> Github</a>
           </div>
         </div>
       </div>

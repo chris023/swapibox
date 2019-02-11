@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { LoadingSplash } from '../';
 import refreshIcon from '../../assets/refresh.png';
-import { Redirect } from 'react-router-dom';
 
 import './Landing.scss';
 
