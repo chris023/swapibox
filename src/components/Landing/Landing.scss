@@ -34,6 +34,25 @@
     }
   }
 
+  .refresh-ico {
+    height: 35px;
+    width: 35px;
+    
+    position: absolute;
+    right: 40px;
+    top: 40px;
+
+    filter: invert(.6);
+
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      filter: invert(1);
+      transform: scale(1.1);
+    }
+  }
+
   @keyframes crawl {
     0% {
       top: 130vh;

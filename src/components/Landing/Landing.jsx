@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { LoadingSplash } from '../';
+import refreshIcon from '../../assets/refresh.png';
 
 import './Landing.scss';
 
@@ -18,6 +19,7 @@ export default class Landing extends Component {
 
     return (
       <div className='Landing'>
+        <img src={refreshIcon} alt="" className='refresh-ico'/>
         {
           loading.films
             ? ( <LoadingSplash /> )
