@@ -149,7 +149,7 @@ $vehicle-secondary: rgba($vehicle-primary,0.5);
       border: solid 2px;
       border-radius: 8px;
 
-      padding: 4px 20px;
+      padding: 10px 20px;
 
       font-size: 12px;
 
@@ -164,6 +164,7 @@ $vehicle-secondary: rgba($vehicle-primary,0.5);
       }
 
       &.vehicle {
+        height: 90px;
         border-color: $vehicle-primary;
         background: $vehicle-secondary;
       }
