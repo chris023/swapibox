@@ -28,8 +28,8 @@ class App extends Component {
       data: {},
       favorites: {
         people: {},
-        planets: {},
-        vehicles: {},
+        planet: {},
+        vehicle: {},
       },
     };
 

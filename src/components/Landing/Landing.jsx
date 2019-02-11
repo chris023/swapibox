@@ -24,7 +24,7 @@ export default class Landing extends Component {
             : (
               <Fragment>
                 <div className='opening-crawl'>
-                  <div class="title">
+                  <div className="title">
                     <h2>{title + ' (' + release_date.split('-')[0] + ')'}</h2>
                     <p>Episode {randIndex + 1}</p>
                   </div>

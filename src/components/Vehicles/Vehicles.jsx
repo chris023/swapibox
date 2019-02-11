@@ -29,7 +29,8 @@ class Vehicles extends Component {
   }
 
   render() {
-    const { vehicles } = this.props.data;
+    const { toggleFavorite } = this.props;
+    const { vehicles} = this.props.data;
 
     return (
       <div className='Vehicles grid-content'>
@@ -54,6 +55,7 @@ class Vehicles extends Component {
               type={'vehicle'}
               name={name}
               content={content}
+              toggleFavorite={toggleFavorite}
               key={name}
             />
           )

@@ -30,6 +30,7 @@ class Planets extends Component {
   }
 
   render() {
+    const { toggleFavorite } = this.props;
     const { planets } = this.props.data;
 
     return (
@@ -56,6 +57,7 @@ class Planets extends Component {
               type={'planet'}
               name={name}
               content={content}
+              toggleFavorite={toggleFavorite}
               key={name}
             />
           )
