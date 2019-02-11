@@ -70,11 +70,18 @@
     height: 30px;
     width: 30px;
 
-    border: solid 2px #fff;
+    border: solid 2px #919191;
     border-radius: 100%;
 
-    color: #fff;
+    color: #919191;
     font-size: 18px;
     font-weight: 700;
+
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      border-color: #fff;
+    }
   }
 }

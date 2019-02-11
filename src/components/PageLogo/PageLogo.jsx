@@ -5,11 +5,11 @@ import './PageLogo.scss';
 class PageLogo extends Component {
   render() {
     return(
-      <div class="PageLogo">
+      <a class="PageLogo" href='https://github.com/chris023/swapibox' target="_blank">
         <h2>SWAPI</h2>
         <br />
-        <p>        Box</p>
-      </div>
+        <p>-- Box --</p>
+      </a>
     )
   }
 }

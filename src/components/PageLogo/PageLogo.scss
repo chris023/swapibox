@@ -5,7 +5,7 @@
   flex-direction: column;
 
   margin: 40px 20px;
-  padding:  2px 20px;
+  padding:  4px 20px;
 
   box-sizing: border-box;
 
@@ -16,6 +16,8 @@
   font-family: "Death Star", monospace;
   
   color: #feda4a;
+  &:visited { color: #feda4a;}
+  text-decoration: none;
 
   border: solid 4px #feda4a;
   border-top-left-radius: 20px;
