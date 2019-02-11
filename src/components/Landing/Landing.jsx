@@ -1,6 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { LoadingSplash } from '../';
 import refreshIcon from '../../assets/refresh.png';
+import { OpeningCrawl } from './';
 
 import './Landing.scss';
 
@@ -45,17 +46,15 @@ export default class Landing extends Component {
         <img src={refreshIcon} alt="" className='refresh-ico' onClick={this.handleRefresh}/>
         {
           (loading.films || !Object.keys(randFilm).length)
-            ? ( <LoadingSplash /> )
+            ? (<LoadingSplash />)
             : (
-              <Fragment>
-                <div className='opening-crawl'>
-                  <div className="title">
-                    <h2>{title + ' (' + release_date.split('-')[0] + ')'}</h2>
-                    <p>Episode {episode}</p>
-                  </div>
-                  <p>{opening_crawl}</p>
-                </div>
-              </Fragment>
+              <OpeningCrawl
+                opening_crawl={opening_crawl}
+                title={title}
+                release_date={release_date}
+                episode={episode}
+                key={episode}
+              />
             ) 
         }
       </div>
