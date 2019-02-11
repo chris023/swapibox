@@ -13,7 +13,7 @@ $vehicle-secondary: rgba($vehicle-primary,0.5);
     width: 250px;
     height: 375px;
 
-    border: solid 1px #fff;
+    border: solid 1px rgb(92, 92, 92);
     border-radius: 4px;
 
     color: #fff;
@@ -26,6 +26,13 @@ $vehicle-secondary: rgba($vehicle-primary,0.5);
 
     font-family: 'Special Elite', cursive;
     p { transform: translateY(12.5%); } //Font baseline fix
+
+    transition: .3s;
+
+    &:hover {
+      border-color: #fff;
+      transform: scale(1.05);
+    }
 
     .header {
       border: solid 2px;
