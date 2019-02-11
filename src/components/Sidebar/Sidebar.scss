@@ -57,4 +57,24 @@
       transition: 1s;
     }
   }
+
+  .help-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+
+    height: 30px;
+    width: 30px;
+
+    border: solid 2px #fff;
+    border-radius: 100%;
+
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+  }
 }

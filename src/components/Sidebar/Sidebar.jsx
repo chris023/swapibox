@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { PageLogo } from '../';
 
 import './Sidebar.scss';
 
@@ -14,6 +15,7 @@ export default class Sidebar extends Component {
 
     return (
       <div className='Sidebar'>
+        <PageLogo />
         {
           menuOptions.map((option) => {
             return(
@@ -30,6 +32,9 @@ export default class Sidebar extends Component {
             )
           })
         }
+        <div className="help-modal">
+          ?
+        </div>
       </div>
     )
   }

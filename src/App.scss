@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
+@font-face {
+  font-family: 'Death Star';
+  src: url('./assets/fonts/deathstar/Death\ Star.otf');
+}
+
 .App {
   display: grid;
   grid-template-columns: 275px 1fr;

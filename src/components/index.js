@@ -6,6 +6,7 @@ import Vehicles from './Vehicles';
 import Favorites from './Favorites';
 import Card from './Card';
 import LoadingSplash from './LoadingSplash';
+import PageLogo from './PageLogo';
 
 export {
   Landing,
@@ -16,4 +17,5 @@ export {
   Favorites,
   Card,
   LoadingSplash,
+  PageLogo,
 }
