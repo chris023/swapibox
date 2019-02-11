@@ -58,7 +58,7 @@
     }
   }
 
-  .help-modal {
+  .help-ico {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,10 +78,47 @@
     font-weight: 700;
 
     cursor: pointer;
+    transition: .4s;
 
     &:hover {
       color: #fff;
       border-color: #fff;
+
+      .modal {
+        filter: opacity(1);
+        color: #bababa;
+        bottom: 0px;
+        left: 40px;
+      }
+    }
+
+    .modal {
+      position: absolute;
+      bottom: -20px;
+      left: -300px;
+
+      width: 260px;
+      padding: 20px;
+
+      color: #bababa;
+      font-size: 18px;
+      font-weight: 400;
+      background: rgba(0, 0, 0, .9);
+      border: solid 1px #bababa;
+      border-radius: 4px;
+      filter: opacity(0);
+
+      transition: .4s;
+
+      a {
+        color: #bababa;
+        font-size: 18px;
+        font-weight: 400;
+        // text-decoration: none;
+        &:visited { color: #bababa; }
+      }
+
+      p { margin: 0; }
     }
   }
 }
