@@ -43,15 +43,15 @@ class Card extends Component {
   }
 
   render() {
-    const { type, content, name } = this.props
+    const { type, content, name, toggleFavorite } = this.props
 
     return (
       <div className='Card'>
         <div className={"header " + type}>
           <p>{name}</p>
-          <div className="fav">
-            <div className="circle">
-              <div className="star-img" />
+          <div className="fav" onClick={() => toggleFavorite(name, content, type)}>
+            <div className="circle" onClick={() => toggleFavorite(name, content, type)}>
+              <div className="star-img" onClick={() => toggleFavorite(name, content, type)}/>
             </div>
             <p>Favorited!</p>
           </div>

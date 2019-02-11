@@ -26,6 +26,11 @@ class App extends Component {
         starships: true,
       },
       data: {},
+      favorites: {
+        people: {},
+        planets: {},
+        vehicles: {},
+      },
     };
 
     this.directories = {
@@ -68,7 +73,6 @@ class App extends Component {
           this.setState((prevState) => {
             const loading = prevState.loading;
             loading[category] = false;
-            console.log('setting...', category, 'to false')
             return loading;
           });
         });
@@ -85,8 +89,38 @@ class App extends Component {
     catch { return ''; }
   }
 
+  getAttrForChar = (character) => {
+    const { getAttribute } = this.props;
+    let { name, homeworld, species } = character;
+
+    if (homeworld) homeworld = this.getAttribute(homeworld);
+
+    if (species) species = this.getAttribute(species[0]);
+
+    if (!homeworld) homeworld = { name: 'Unknown', population: 'Unknown' }
+    if (!species) species = { name: 'Unknown', language: 'Unknown' }
+
+    return {
+      name,
+      homeworldName: homeworld.name,
+      homeworldPop: homeworld.population,
+      speciesName: species.name,
+      speciesLang: species.language,
+    }
+  }
+
+  toggleFavorite = (name, content, type) => {
+    this.setState((prev) => {
+      
+      if (prev.favorites[type][name]) delete prev.favorites[type][name];
+      else { prev.favorites[type][name] = content }
+      
+      return { favorites: prev.favorites, };
+    })
+  }
+
   render() {
-    const { currentPage, data, loading } = this.state;
+    const { data, loading } = this.state;
 
     return (
       <div className="App">
@@ -97,10 +131,10 @@ class App extends Component {
               ? <Route exact path='/' render={(props) => <Landing {...props} data={data} loading={loading} />} />
               : <Route exact path='/' render={(props) => <Landing {...props} data={{ films: [''] }} loading={loading}/>} />
           }
-          <Route exact path='/People' render={(props) => <People {...props} data={data} getAttribute={this.getAttribute} loading={loading}/>}/>
-          <Route exact path='/Planets' render={(props) => <Planets {...props} data={data} getAttribute={this.getAttribute} />}/>
-          <Route exact path='/Vehicles' render={(props) => <Vehicles {...props} data={data} getAttribute={this.getAttribute} />}/>
-          <Route exact path='/Favorites' render={(props) => <Favorites {...props} data={data} getAttribute={this.getAttribute} />}/>
+          <Route exact path='/People' render={(props) => <People {...props} data={data} toggleFavorite={this.toggleFavorite} getAttribute={this.getAttribute} getAttrForChar={this.getAttrForChar} loading={loading}/>}/>
+          <Route exact path='/Planets' render={(props) => <Planets {...props} data={data} toggleFavorite={this.toggleFavorite} getAttribute={this.getAttribute} loading={loading}/>}/>
+          <Route exact path='/Vehicles' render={(props) => <Vehicles {...props} data={data} toggleFavorite={this.toggleFavorite} getAttribute={this.getAttribute} loading={loading}/>}/>
+          <Route exact path='/Favorites' render={(props) => <Favorites {...props} data={data} toggleFavorite={this.toggleFavorite} getAttribute={this.getAttribute} favorites={this.state.favorites} getAttrForChar={this.getAttrForChar} loading={loading}/>}/>
         </Switch>
       </div>
     )
