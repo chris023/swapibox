@@ -25,12 +25,13 @@ class App extends Component {
         vehicles: true,
         starships: true,
       },
-      data: {},
+      data: { films: [''] },
       favorites: {
         people: {},
         planet: {},
         vehicle: {},
       },
+      rerender: false,
     };
 
     this.directories = {
@@ -99,6 +100,8 @@ class App extends Component {
     })
   }
 
+  trigger
+
   render() {
     const { data, loading } = this.state;
 
@@ -106,11 +109,7 @@ class App extends Component {
       <div className="App">
         <Route path='/' render={(props) => <Sidebar {...props} data={data} />} />
         <Switch>
-          {
-            !loading.films
-              ? <Route exact path='/' render={(props) => <Landing {...props} data={data} loading={loading} />} />
-              : <Route exact path='/' render={(props) => <Landing {...props} data={{ films: [''] }} loading={loading}/>} />
-          }
+          <Route exact path='/' render={(props) => <Landing {...props} data={data} loading={loading} />} />
           <Route exact path='/People' render={(props) => <People {...props} data={data} toggleFavorite={this.toggleFavorite} getAttribute={this.getAttribute} loading={loading}/>}/>
           <Route exact path='/Planets' render={(props) => <Planets {...props} data={data} toggleFavorite={this.toggleFavorite} getAttribute={this.getAttribute} loading={loading}/>}/>
           <Route exact path='/Vehicles' render={(props) => <Vehicles {...props} data={data} toggleFavorite={this.toggleFavorite} getAttribute={this.getAttribute} loading={loading}/>}/>
