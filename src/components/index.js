@@ -5,6 +5,7 @@ import Sidebar from './Sidebar';
 import Vehicles from './Vehicles';
 import Favorites from './Favorites';
 import Card from './Card';
+import LoadingSplash from './LoadingSplash';
 
 export {
   Landing,
@@ -14,4 +15,5 @@ export {
   Vehicles,
   Favorites,
   Card,
+  LoadingSplash,
 }

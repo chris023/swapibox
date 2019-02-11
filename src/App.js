@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import {
   Landing,
   People,
@@ -16,8 +17,14 @@ class App extends Component {
     super(props);
 
     this.state = {
-      loading: true,
-      currentPage: <Landing data={{ films: [''] }} loading={true} />,
+      loading: {
+        films: true,
+        people: true,
+        planets: true,
+        species: true,
+        vehicles: true,
+        starships: true,
+      },
       data: {},
     };
 
@@ -35,33 +42,6 @@ class App extends Component {
     this.fetchAPIData();
   }
 
-  setCurrentPage = (currentPageName) => {
-    const { data, loading } = this.state;
-    let currentPage = null;
-    
-    switch (currentPageName) {
-      case 'Home':
-        currentPage = <Landing data={data} loading={loading} />
-        break;
-      case 'People':
-        currentPage = <People data={data} getAttribute={this.getAttribute} />
-        break;
-      case 'Planets':
-        currentPage = <Planets data={data} getAttribute={this.getAttribute} />
-        break;
-      case 'Vehicles':
-        currentPage = <Vehicles data={data} getAttribute={this.getAttribute} />
-        break;
-      case 'Favorites':
-        currentPage = <Favorites data={data} getAttribute={this.getAttribute} />
-        break;
-      default:
-        return;
-    }
-    
-    this.setState({ currentPage, })
-  }
-
   fetchAPIData = () => {
    
     Object.keys(this.directories).forEach(category => {
@@ -72,10 +52,7 @@ class App extends Component {
             prevState.data[category] = results;
             return prevState;
           });
-          if (category === 'films') {
-            this.setState({ loading: false });
-            this.setCurrentPage('Home');
-          }
+          
           const numPages = Math.ceil(count / 10);
           for (let i = 1; i < numPages; i++) {
             fetch(this.directories[category] + '?page=' + (i + 1))
@@ -87,6 +64,13 @@ class App extends Component {
                 });
               });
           }
+
+          this.setState((prevState) => {
+            const loading = prevState.loading;
+            loading[category] = false;
+            console.log('setting...', category, 'to false')
+            return loading;
+          });
         });
     });
   }
@@ -102,12 +86,22 @@ class App extends Component {
   }
 
   render() {
-    const { currentPage } = this.state;
+    const { currentPage, data, loading } = this.state;
 
     return (
       <div className="App">
-        <Sidebar setCurrentPage={this.setCurrentPage} />
-        {currentPage}
+        <Route path='/' render={(props) => <Sidebar {...props} data={data} />} />
+        <Switch>
+          {
+            !loading.films
+              ? <Route exact path='/' render={(props) => <Landing {...props} data={data} loading={loading} />} />
+              : <Route exact path='/' render={(props) => <Landing {...props} data={{ films: [''] }} loading={loading}/>} />
+          }
+          <Route exact path='/People' render={(props) => <People {...props} data={data} getAttribute={this.getAttribute} loading={loading}/>}/>
+          <Route exact path='/Planets' render={(props) => <Planets {...props} data={data} getAttribute={this.getAttribute} />}/>
+          <Route exact path='/Vehicles' render={(props) => <Vehicles {...props} data={data} getAttribute={this.getAttribute} />}/>
+          <Route exact path='/Favorites' render={(props) => <Favorites {...props} data={data} getAttribute={this.getAttribute} />}/>
+        </Switch>
       </div>
     )
   }

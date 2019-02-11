@@ -34,24 +34,6 @@
     }
   }
 
-  .loading-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    border: solid 1px;
-    border-radius: 100%;
-
-    height: 240px;
-    width: 240px;
-
-    .loading-text {
-      margin: 0;
-      font-size: 28px;
-    }
-  }
-
   @keyframes crawl {
     0% {
       top: 130vh;
@@ -61,58 +43,5 @@
       top: -6000px;
       transform: rotateX(25deg) translateZ(-2500px);
     }
-  }
-  
-  .vader {
-    background: url('../../assets/icons.png') no-repeat -352px -254px;
-    width: 96px;
-    height: 92px;
-  }
-
-  .wookie {
-	background: url('../../assets/icons.png') no-repeat -42px -83px;
-	width: 76px;
-	height: 113px;
-  }
-
-  .r2d2 {
-	background: url('../../assets/icons.png') no-repeat -196px -92px;
-	width: 88px;
-	height: 96px;
-  }
-
-  .c3po {
-	background: url('../../assets/icons.png') no-repeat -355px -88px;
-	width: 90px;
-	height: 96px;
-  }
-
-  .bb8 {
-    background: url('../../assets/icons.png') no-repeat -526px -76px;
-    width: 68px;
-    height: 112px;
-  }
-  .fighter {
-    background: url('../../assets/icons.png') no-repeat -674px -96px;
-    width: 92px;
-    height: 88px;
-  }
-
-  .fett {
-    background: url('../../assets/icons.png') no-repeat -674px -96px;
-    width: 92px;
-    height: 88px;
-  }
-
-  .trooper {
-    background: url('../../assets/icons.png') no-repeat -196px -256px;
-    width: 88px;
-    height: 88px;
-  }
-
-  .wren {
-    background: url('../../assets/icons.png') no-repeat -196px -256px;
-    width: 88px;
-    height: 88px;
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { LoadingSplash } from '../';
 
 import './Landing.scss';
 
@@ -8,27 +9,18 @@ export default class Landing extends Component {
     const { loading, data } = this.props;
     const { films } = data;
 
-    const loadingIcons = ['vader', 'wookie', 'r2d2', 'c3po', 'bb8', 'fighter', 'fett', 'trooper', 'wren'];
-    const randomIcon = loadingIcons[Math.round(Math.random() * (loadingIcons.length - 1))]
-
-    //Get random film
     const randIndex = Math.round(Math.random() * (films.length - 1));
     const {
-      opening_crawl,
-      title,
-      release_date,
-    } = films[randIndex];
+        opening_crawl,
+        title,
+        release_date,
+      } = films[randIndex];
 
     return (
       <div className='Landing'>
         {
-          loading
-            ? (
-              <div className='loading-wrapper'>
-                <div className={randomIcon} />
-                <p className="loading-text">Loading</p>
-              </div>
-            )
+          loading.films
+            ? ( <LoadingSplash /> )
             : (
               <Fragment>
                 <div className='opening-crawl'>

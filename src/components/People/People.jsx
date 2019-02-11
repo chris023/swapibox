@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Card } from '../';
+import { Card, LoadingSplash } from '../';
 
 import './People.scss';
 
@@ -26,36 +26,43 @@ class People extends Component {
   }
 
   render() {
+    const { loading } = this.props;
     const { people } = this.props.data;
 
     return (
       <div className='People grid-content'>
-        { people.map((character) => {
-            const {
-              name,
-              homeworldName,
-              homeworldPop,
-              speciesName,
-              speciesLang } = this.getAttrForChar(character);
+        {
+          (loading.people || loading.species || loading.planets)
+            ? (<LoadingSplash />)
+            : 
+                people.map((character) => {
+                  const {
+                    name,
+                    homeworldName,
+                    homeworldPop,
+                    speciesName,
+                    speciesLang } = this.getAttrForChar(character);
             
-            const content = (
-              <Fragment>
-                <p>Homeworld: {homeworldName}</p>
-                <p>Population: {homeworldPop}</p>
-                <p>Species: {speciesName}</p>
-                <p>Language: {speciesLang}</p>
-              </Fragment>
-            )
+                  const content = (
+                    <Fragment>
+                      <p>Homeworld: {homeworldName}</p>
+                      <p>Population: {homeworldPop}</p>
+                      <p>Species: {speciesName}</p>
+                      <p>Language: {speciesLang}</p>
+                    </Fragment>
+                  )
 
-            return (
-              <Card
-                type={'people'}
-                name={name}
-                content={content}
-                key={name}
-              />
+                  return (
+                    <Card
+                      type={'people'}
+                      name={name}
+                      content={content}
+                      key={name}
+                    />
+                  )
+                }
+              
             )
-          })
         }
       </div>
       

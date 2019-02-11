@@ -21,7 +21,7 @@
 
     cursor: pointer;
 
-    button {
+    .button {
       width: 100%;
       border: none;
       background: none;
@@ -29,7 +29,8 @@
       padding: 0;
 
       font-size: 32px;
-      color: rgb(145, 145, 145);  
+      color: rgb(145, 145, 145); 
+      text-decoration: none; 
 
       transition: .6s;
       cursor: pointer;
@@ -39,7 +40,7 @@
         transition: .3s;
       }
 
-      &.selected {
+      &.active {
         transform: scale(1.1);
         color: #fff;
       }
