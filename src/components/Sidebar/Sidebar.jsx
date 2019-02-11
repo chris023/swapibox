@@ -17,12 +17,12 @@ export default class Sidebar extends Component {
         {
           menuOptions.map((option) => {
             return(
-              <div className='button-container'>
+              <div className='button-container' key={option}>
                 <NavLink
                   className='button'
                   exact
                   to={option === 'Home' ? '/' : `/${option.toLowerCase()}`}
-                  key={option}>
+                >
                   {option}
                 </NavLink>
                 <span className={currentPage === option.toLowerCase() ? 'dot' : 'dot hidden'}>{' •'}</span>

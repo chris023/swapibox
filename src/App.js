@@ -90,7 +90,6 @@ class App extends Component {
   }
 
   getAttrForChar = (character) => {
-    const { getAttribute } = this.props;
     let { name, homeworld, species } = character;
 
     if (homeworld) homeworld = this.getAttribute(homeworld);
