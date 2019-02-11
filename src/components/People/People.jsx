@@ -22,7 +22,7 @@ class People extends Component {
                     homeworldPop,
                     speciesName,
                     speciesLang } = getAttrForChar(character);
-            
+                  
                   const content = (
                     <Fragment>
                       <p>Homeworld: {homeworldName}</p>
