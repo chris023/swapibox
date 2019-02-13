@@ -19,6 +19,8 @@
     font-size: 32px;
     color: #fff;
 
+    position: relative;
+
     cursor: pointer;
 
     .button {
@@ -120,5 +122,26 @@
 
       p { margin: 0; }
     }
+  }
+
+  .fav-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: solid 1px #feda4a;
+    border-radius: 100%;
+
+    position: absolute;
+    right: 35px;
+    bottom: 40px;
+
+    font-size: 18px;
+    color: #feda4a;
+
+    transform: scale(.6);
   }
 }

@@ -28,6 +28,11 @@ export default class Sidebar extends Component {
                   {option}
                 </NavLink>
                 <span className={currentPage === option.toLowerCase() ? 'dot' : 'dot hidden'}>{' •'}</span>
+                {(option === 'Favorites') && (
+                  <div className='fav-indicator'>
+                    5
+                  </div>
+                )}
               </div>
             )
           })
