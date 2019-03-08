@@ -1,7 +1,13 @@
-#  <img src="/src/assets/readme/logo.png" width="160" height="80"> SWAPI BOX
+# SWAPIBOX
+<img src="/src/assets/readme/logo.png" width="175" height="100">
 
 ## Intro
 This is an educational project designed to practice front-end UI development and displaying of data accessed from a public API
+
+## Tools
+<img src="/src/assets/readme/js.png" width="80" height="80"> <img src="/src/assets/readme/react.png" width="80" height="80"> <img src="/src/assets/readme/react-router.png" width="80" height="80">
+
+Javascript  |  React  |  react-router
 
 ## Demo
 ![](/src/assets/readme/SWAPIbox.gif)
