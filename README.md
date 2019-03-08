@@ -1,4 +1,5 @@
-#  <img src="/src/assets/readme/logo.png" width="160" height="80"> SWapi BOX
+# SWapi BOX
+<img src="/src/assets/readme/logo.png" width="140" height="80">
 
 ## Intro
 This is an educational project designed to practice front-end UI development and displaying of data accessed from the public Star Wars api.
