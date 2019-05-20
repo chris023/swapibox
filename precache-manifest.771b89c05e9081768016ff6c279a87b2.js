@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/swapibox/static/media/luke.9337f381.png"
   },
   {
-    "revision": "df0cfa7adda9a68c7958",
+    "revision": "dfe297be87b9516d47a2",
     "url": "/swapibox/static/css/main.d37b3521.chunk.css"
   },
   {
@@ -80,8 +80,8 @@ self.__precacheManifest = [
     "url": "/swapibox/static/media/leia.ed2be783.png"
   },
   {
-    "revision": "df0cfa7adda9a68c7958",
-    "url": "/swapibox/static/js/main.df0cfa7a.chunk.js"
+    "revision": "dfe297be87b9516d47a2",
+    "url": "/swapibox/static/js/main.dfe297be.chunk.js"
   },
   {
     "revision": "e6ed8eb0a307e0c8552fbeacc2afbafe",
@@ -156,7 +156,7 @@ self.__precacheManifest = [
     "url": "/swapibox/static/media/stars.f353f1a0.jpg"
   },
   {
-    "revision": "a12a086cd932b3f5ff6f05c8c31c323a",
+    "revision": "35c0714544c63b25b54008066c3d2371",
     "url": "/swapibox/index.html"
   }
 ];
