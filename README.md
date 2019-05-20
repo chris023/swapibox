@@ -10,6 +10,7 @@ This is an educational project designed to practice front-end UI development and
 Javascript  |  React  |  react-router
 
 ## Demo
+(*refresh page if gif isn't looping*)
 ![](/src/assets/readme/SWAPIbox.gif)
 
 ## Instructions To Install
